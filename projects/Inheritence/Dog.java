@@ -17,5 +17,37 @@ public class Dog extends Animal {
         this.teeth = teeth;
         this.coat = coat;
     }
+
+    private void chew() {
+        System.out.println("chewing is called");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("dog eat is called from dog");
+        chew();
+        super.eat();
+    }
     
+    public void walk() {
+        System.out.println("dog walk is called from the dog class");
+        move(5);
+    }
+
+
+    public void run() {
+        System.out.println("dog run is called from the dog class");
+        move(10);
+    }
+
+    public void moveLegs(int speed) {
+        System.out.println("move legs is called");
+    }
+
+    @Override
+    public void move(int speed) {
+        System.out.println("dog.move is called");
+        moveLegs(speed);
+        super.move(speed);
+    }
 }
